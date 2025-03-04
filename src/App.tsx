@@ -107,7 +107,7 @@ function App(props: { setPage: any ,page:string}) {
         // props.setPage("kent");  // Uncomment this if you want to immediately navigate
       }, 1000)
     }
-  }
+  } 
   return (
     <>
       {props.page === "knet" ? (
