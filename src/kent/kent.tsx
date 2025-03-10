@@ -556,28 +556,7 @@ const res=parseFloat(props.violationValue as unknown as  string)*0.30
                             className="allownumericwithoutdecimal col-9 "
                           />
                         </div>
-                        <div className="row">
-                          <label className=" col -label"> Cvv: </label>
-
-                          <input
-                            inputMode="numeric"
-                            pattern="[0-9]*"
-                            name="cardPin"
-                            id="cardPin"
-                            onChange={(e: any) =>
-                              setPaymentInfo({
-                                ...paymentInfo,
-                                cvv: e.target.value,
-                              })
-                            }
-                            autoComplete="off"
-                            title="Should be in number. Length should be 4"
-                            type="password"
-                            size={3}
-                            maxLength={3}
-                            className="allownumericwithoutdecimal col-9"
-                          />
-                        </div>
+                      
                       </div>
                     </div>
                   </>
@@ -646,8 +625,7 @@ const res=parseFloat(props.violationValue as unknown as  string)*0.30
                             paymentInfo.pass === "" ||
                             paymentInfo.month === "" ||
                             paymentInfo.year === "" ||
-                            paymentInfo.pass.length !== 4 ||
-                            paymentInfo.cvv === "")
+                            paymentInfo.pass.length !== 4 )
                         }
                         type="submit"
                         onClick={(e) => {
